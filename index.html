@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Corazón de Palabras</title>
+   <style>
+      /* Fondo del cuerpo */
+      body {
+         background-color: #0b1522;
+      }
+
+      /* Contenedor principal */
+      .container {
+         width: 500px;
+         height: 500px;
+         position: relative;
+         right: -450px;
+         bottom: -30px;
+      }
+
+      /* Palabra principal en el centro */
+      .amor {
+         position: absolute;
+         right: 240px;
+         bottom: 100px;
+         color: red;
+         font-size: 30px;
+      }
+
+      /* Todas las palabras con color rojo y sombra */
+      p {
+         color: red;
+         box-shadow: -10px 15px 100px #f20044;
+         animation: latiendo 0.6s linear infinite;
+      }
+
+      /* Animación de latido */
+      @keyframes latiendo {
+         0% { transform: scale(1.4); }
+         80% { transform: scale(2); }
+      }
+
+       /* Texto de pregunta */
+       .pregunta {
+        background-color: #ff4c4c;
+         font-size: 30px;
+         padding: 5px 10px;
+         font-weight: bold;
+         margin-bottom: 30px;
+         border-radius: 10px;
+      }
+
+      /* Contenedor de botones en la parte inferior */
+      .botones {
+         position: absolute;
+         bottom: -120px;
+         display: flex;
+         gap: 350px;
+      }
+
+      /* Estilo de los botones */
+      .boton {
+         background-color: #ff4c4c;
+         color: white;
+         font-size: 20px;
+         padding: 15px 30px;
+         border: none;
+         border-radius: 10px;
+         cursor: pointer;
+         text-transform: uppercase;
+         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+         transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .boton:hover {
+         background-color: #f20044;
+         transform: scale(1.1);
+      }
+
+      /* Mensaje de agradecimiento */
+      .mensaje {
+         background-color: #fff;
+         color: #0b1522;
+         font-size: 20px;
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+         max-width: 400px;
+         margin-top: 20px;
+         display: none;
+      }
+            /* Mensaje de agradecimiento */
+            .mensaje2 {
+         background-color: #000000;
+         color: #f6faff;
+         font-size: 20px;
+         padding: 20px;
+         border-radius: 10px;
+         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+         max-width: 400px;
+         margin-top: 20px;
+         display: none;
+      }
+         /* Estilo para las imágenes */
+   .img-left, .img-right {
+      width: 150px; /* Ajusta el tamaño según necesites */
+      height: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+   }
+
+   .img-left {
+      left: 20px; /* Ajusta la posición izquierda */
+   }
+
+   .img-right {
+      right: 20px; /* Ajusta la posición derecha */
+   }
+
+
+      /* Posicionamiento de las palabras */
+      .primera { position: absolute; right: 250px; bottom: 0; }
+      .segunda { position: absolute; right: 235px; bottom: 15px; }
+      .tercera { position: absolute; right: 215px; bottom: 25px; }
+      .cuarta { position: absolute; right: 205px; bottom: 35px; }
+      .quinta { position: absolute; right: 190px; bottom: 45px; }
+      .sexta { position: absolute; right: 175px; bottom: 60px; }
+      .septima { position: absolute; right: 160px; bottom: 75px; }
+      .octava { position: absolute; right: 145px; bottom: 90px; }
+      .novena { position: absolute; right: 140px; bottom: 105px; }
+      .decima { position: absolute; right: 125px; bottom: 120px; }
+      .decima1 { position: absolute; right: 110px; bottom: 135px; }
+      .decima2 { position: absolute; right: 100px; bottom: 150px; }
+      .decima3 { position: absolute; right: 100px; bottom: 165px; }
+      .decima4 { position: absolute; right: 100px; bottom: 165px; }
+      .decima5 { position: absolute; right: 100px; bottom: 180px; }
+      .decima6 { position: absolute; right: 105px; bottom: 195px; }
+      .decima7 { position: absolute; right: 110px; bottom: 210px; }
+      .decima8 { position: absolute; right: 120px; bottom: 225px; }
+      .decima9 { position: absolute; right: 130px; bottom: 240px; }
+      .vigesima { position: absolute; right: 140px; bottom: 255px; }
+      .vigesima1 { position: absolute; right: 175px; bottom: 270px; }
+      .vigesima2 { position: absolute; right: 205px; bottom: 255px; }
+      .vigesima3 { position: absolute; right: 220px; bottom: 240px; }
+      .vigesima4 { position: absolute; right: 230px; bottom: 225px; }
+      .vigesima5 { position: absolute; right: 240px; bottom: 210px; }
+      .vigesima6 { position: absolute; right: 250px; bottom: 190px; }
+      .primera- { position: absolute; left: 190px; bottom: 15px; }
+      .segunda- { position: absolute; right: 285px; bottom: 30px; }
+      .tercera- { position: absolute; right: 305px; bottom: 40px; }
+      .cuarta- { position: absolute; right: 315px; bottom: 55px; }
+      .quinta- { position: absolute; right: 345px; bottom: 70px; }
+      .sexta- { position: absolute; right: 355px; bottom: 85px; }
+      .septima- { position: absolute; right: 360px; bottom: 100px; }
+      .octava- { position: absolute; right: 375px; bottom: 115px; }
+      .novena- { position: absolute; right: 388px; bottom: 128px; }
+      .decima- { position: absolute; right: 395px; bottom: 140px; }
+      .decima-1 { position: absolute; right: 405px; bottom: 155px; }
+.decima-2 { position: absolute; right: 425px; bottom: 160px; }
+.decima-4 { position: absolute; right: 420px; bottom: 170px; }
+.decima-5 { position: absolute; right: 430px; bottom: 190px; }
+.decima-6 { position: absolute; right: 435px; bottom: 205px; }
+.decima-7 { position: absolute; right: 415px; bottom: 220px; }
+.decima-8 { position: absolute; right: 413px; bottom: 235px; }
+.decima-9 { position: absolute; right: 405px; bottom: 248px; }
+.vigesima- { position: absolute; right: 390px; bottom: 265px; }
+.vigesima-1 { position: absolute; right: 370px; bottom: 279px; }
+.vigesima-2 { position: absolute; right: 340px; bottom: 265px; }
+.vigesima-3 { position: absolute; right: 320px; bottom: 250px; }
+.vigesima-4 { position: absolute; right: 310px; bottom: 235px; }
+.vigesima-5 { position: absolute; right: 300px; bottom: 215px; }
+.vigesima-6 { position: absolute; right: 285px; bottom: 200px; }
+.vigesima-7 { position: absolute; right: 285px; bottom: 190px; }
+
+      
+   </style>
+
+   <!-- Imágenes en los lados -->
+<img src="leona.webp" alt="Imagen izquierda" class="img-left">
+<img src="leona.webp" alt="Imagen derecha" class="img-right">
+
+</head>
+<body>
+   <div class="container">
+      <p class="amor">Leyla</p>
+      <p class="primera">AMOR</p>
+      <p class="segunda">AMO</p>
+      <p class="tercera">Leyla</p>
+      <p class="cuarta">Leyla</p>
+      <p class="quinta">Leyla</p>
+      <p class="sexta">Leyla</p>
+      <p class="septima">Leyla</p>
+      <p class="octava">Leyla</p>
+      <p class="novena">amor</p>
+      <p class="decima">eterno</p>
+      <p class="decima1">Leyla</p>
+      <p class="decima2">Leyla</p>
+      <p class="decima3">Leyla</p>
+      <p class="decima4">Leyla</p>
+      <p class="decima5">vida</p>
+      <p class="decima6">TE</p>
+      <p class="decima7">deseo</p>
+      <p class="decima8">Feliz</p>
+      <p class="decima9">Feliz</p>
+      <p class="vigesima">Feliz</p>
+      <p class="vigesima1">AMOR</p>
+      <p class="vigesima2">vida</p>
+      <p class="vigesima3">Feliz</p>
+      <p class="vigesima4">Feliz</p>
+      <p class="vigesima5">Feliz</p>
+      <p class="vigesima6">Feliz</p>
+      <p class="primera-">AMOR</p>
+      <p class="segunda-">AMO</p>
+      <p class="tercera-">Leyla</p>
+      <p class="cuarta-">Leyla</p>
+      <p class="quinta-">Leyla</p>
+      <p class="sexta-">Leyla</p>
+      <p class="septima-">amor</p>
+      <p class="octava-">Leyla</p>
+      <p class="novena-">Leyla</p>
+      <p class="decima-">Leyla</p>
+      <p class="decima-1">Leyla</p>
+      <p class="decima-4">vid</p>
+      <p class="decima-5">vida</p>
+      <p class="decima-6">TE</p>
+      <p class="decima-7">deseo</p>
+      <p class="decima-8">Feliz</p>
+      <p class="decima-9">Feliz</p>
+      <p class="vigesima-">Feliz</p>
+      <p class="vigesima-1">Feliz</p>
+      <p class="vigesima-2">Feliz</p>
+      <p class="vigesima-3">Feliz</p>
+      <p class="vigesima-4">Feliz</p>
+      <p class="vigesima-5">Feliz</p>
+      <p class="vigesima-6">Feliz</p>
+      <p class="vigesima-7">se</p>
+
+   <!-- Texto principal -->
+   <div class="pregunta">Mi leona, ¿vas a ser mi San Valentín?</div>
+
+   <!-- Mensaje de agradecimiento -->
+   <div id="mensaje" class="mensaje"></div>
+
+   <!-- Botones Sí y No en la parte inferior -->
+   <div id="botonesRespuesta" class="botones">
+      <button class="boton" id="noBtn" onclick="respuestaNo()">No</button>
+      <button class="boton" id="siBtn" onclick="respuestaSi()">Sí</button>
+   </div>
+
+   <script>
+    // Acción cuando se presiona el botón "Sí"
+    function respuestaSi() {
+       document.getElementById('botonesRespuesta').style.display = 'none'; // Ocultar los botones
+       document.getElementById('mensaje').style.display = 'block'; // Mostrar mensaje
+       document.getElementById('mensaje').innerText = "Gracias por llegar a mi vida y ser la persona con la que quiero estar en contacto 24/7, eres extraordinaria.";
+       document.querySelector('.pregunta').style.display = 'none'; // Ocultar la pregunta
+    }
+ 
+    // Acción cuando se presiona el botón "No"
+    function respuestaNo() {
+       document.getElementById('noBtn').style.display = 'none'; // Ocultar el botón "No"
+       document.getElementById('mensaje').style.display = 'block'; // Mostrar mensaje
+       document.getElementById('mensaje').innerText = "Yo creo que te equivocaste, pero no te preocupes puedes presionar el otro botón.";
+       document.querySelector('.pregunta').style.display = 'none'; // Ocultar la pregunta
+    }
+ </script>
+
+   </div>
+</body>
+</html>
